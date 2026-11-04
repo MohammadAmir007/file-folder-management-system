@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login — My Files</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='auth.js') }}" defer></script>
+</head>
+<body class="auth-page">
+  <div class="auth-box">
+    <div class="auth-icon">📁</div>
+    <h1>My Files</h1>
+    <p class="auth-subtitle">Apne files access karne ke liye login karein</p>
+
+    {% if error %}
+      <div class="auth-error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" class="auth-form">
+      <label>Username</label>
+      <input type="text" name="username" autocomplete="username" required autofocus>
+
+      <label>Password</label>
+      <div class="password-wrap">
+        <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+        <button type="button" class="password-toggle" data-target="loginPassword" aria-label="Show password">👁️</button>
+      </div>
+
+      <button type="submit" class="auth-submit">Login</button>
+    </form>
+
+    <p class="auth-link">Pehli baar use kar rahe hain? <a href="/register">Create account</a></p>
+  </div>
+</body>
+</html>
