@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File & Folder Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="brand">📁 File & Folder Manager</div><span>Python • DSA • HTML • C</span></header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">YOUR DIGITAL WORKSPACE</p><h1>Manage files.<br><em>Stay organized.</em></h1>
+      <p>Create, read, write, rename, copy, move, delete and search your files from one simple interface.</p></div>
+      <div class="hero-icon">📂</div>
+    </section>
+    <section class="toolbar">
+      <div class="pathline">Location: <strong id="currentPath">workspace</strong></div>
+      <div class="actions">
+        <button onclick="createItem('create_file')">＋ New file</button>
+        <button onclick="createItem('create_folder')">＋ New folder</button>
+        <button class="secondary" onclick="goUp()">↑ Up</button>
+      </div>
+    </section>
+    <section class="searchbar">
+      <input id="searchInput" placeholder="Search files and folders by name...">
+      <button onclick="searchItems()">Search</button>
+      <button class="secondary" onclick="loadItems()">Clear</button>
+    </section>
+    <section class="layout">
+      <aside><h3>Folder structure</h3><div id="tree" class="tree"></div></aside>
+      <section class="content">
+        <div class="content-head"><h2>Files & folders</h2><button class="secondary" onclick="sortItems()">Sort A–Z</button></div>
+        <div id="items" class="items"></div>
+      </section>
+    </section>
+    <section class="editor">
+      <div class="content-head"><h2>Text editor</h2><span id="editorName">No file selected</span></div>
+      <textarea id="editor" placeholder="Select a text file to read or edit its content..."></textarea>
+      <button onclick="saveFile()">Save changes</button>
+    </section>
+    <p id="status" role="status"></p>
+    <footer>File & Folder Management System · Academic project demonstration</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
